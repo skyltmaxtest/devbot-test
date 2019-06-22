@@ -1,0 +1,8 @@
+deploy:
+  - branches:
+    - master
+    handler: dokku
+    migrate: true
+    services:
+      - postgresql
+      - redis
