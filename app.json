@@ -6,11 +6,10 @@
   "repository": "https://github.com/krisrang/devbot-test",
   "logo": "https://skyltmax.github.io/jenkins-style/logo.png",
   "addons": [
-    "heroku-postgresql",
     {
-      "plan": "devbot-postgresql",
+      "plan": "heroku-postgresql",
       "options": {
-        "version": "12.1"
+        "version": "12"
       }
     }
   ],
@@ -49,9 +48,9 @@
     }
   },
   "scripts": {
-    "postdeploy": "bundle exec rake bootstrap",
+    "postdeploy": "env",
     "// The postdeploy script is run once, after the app is created and not on subsequent deploys to the app": "",
-    "pr-predestroy": "bundle exec rake cleanup",
+    "pr-predestroy": "env",
     "// The pr-predestroy script is run when review apps are destroyed by merging or closing the associated pull request.": ""
   }
 }
