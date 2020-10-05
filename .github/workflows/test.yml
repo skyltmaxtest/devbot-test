@@ -3,7 +3,7 @@ name: Check test
 on: [push]
 
 jobs:
-  bundler-audit:
+  test:
     runs-on: ubuntu-latest
 
     steps:
