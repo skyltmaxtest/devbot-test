@@ -1,0 +1,18 @@
+name: LHCI
+
+on: [workflow_dispatch]
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 10
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: npm install && npm install -g @lhci/cli@0.7.x
+      - run: npm run build
+      - run: lhci autorun --collect.url=https://skyltmax-autopull-dt-1-ghdep-rhcfv.aurora.krn.ee:8881 --upload.token=a40c151a-a482-4d88-a329-cf6a6933b1b4
