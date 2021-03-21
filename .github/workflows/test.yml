@@ -1,6 +1,6 @@
 name: test
 
-on: [deployment]
+on: [deployment_status]
 
 jobs:
   test:
